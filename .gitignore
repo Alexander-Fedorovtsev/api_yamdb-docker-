@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#run code
+run.sh
+stop.sh
+test.py
+
 # C extensions
 *.so
 
@@ -146,6 +151,5 @@ dmypy.json
 .mypy_cache
 
 # папки со статикой и медиа
-static/
-posts/static/
+media/
 
