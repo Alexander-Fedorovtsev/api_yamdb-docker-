@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from datetime import timedelta
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '../../.env')
 if os.path.exists(dotenv_path):
@@ -13,7 +13,7 @@ if os.path.exists(dotenv_path):
 SECRET_KEY = "p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -115,10 +115,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, "static/"),)
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, '../static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "../media/")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
 AUTH_USER_MODEL = "user.User"
