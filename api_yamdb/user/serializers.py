@@ -6,7 +6,6 @@ from django.core.mail import send_mail
 from rest_framework_simplejwt.serializers import (
     TokenObtainPairSerializer,
 )
-from rest_framework import serializers
 
 
 class UserRegistrSerializer(serializers.ModelSerializer):

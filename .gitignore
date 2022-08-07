@@ -7,7 +7,7 @@ __pycache__/
 #run.sh
 stop.sh
 test.py
-setup.cfg
+*.cfg
 
 # C extensions
 *.so

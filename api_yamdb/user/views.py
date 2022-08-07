@@ -19,7 +19,6 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
 )
 from rest_framework import filters
-from rest_framework import viewsets
 
 
 class RegistrUserView(CreateAPIView):
