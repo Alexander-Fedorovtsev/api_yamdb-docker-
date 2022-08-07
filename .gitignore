@@ -4,9 +4,10 @@ __pycache__/
 *$py.class
 
 #run code
-run.sh
+#run.sh
 stop.sh
 test.py
+setup.cfg
 
 # C extensions
 *.so
