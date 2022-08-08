@@ -2,23 +2,19 @@ import os
 from dotenv import load_dotenv
 from datetime import timedelta
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-dotenv_path = os.path.join(os.path.dirname(__file__), "../../.env")
+dotenv_path = os.path.join(os.path.dirname(BASE_DIR), "infra/.env")
+
 if os.path.exists(dotenv_path):
     load_dotenv(dotenv_path)
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
+SECRET_KEY = os.getenv("SECRET_KEY")
 
-# Application definition
+DEBUG = os.getenv("DEBUG")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -115,7 +111,6 @@ USE_TZ = True
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static/"),)
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 

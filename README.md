@@ -30,28 +30,17 @@ YaMDB отправляет письмо с кодом подтверждения
 
 ### С помощью Docker:
 
-Собрать образы Docker поможет файл **_run.sh_** в корне проекта. В нем последовательно выполняются следующие команды:
+Собрать образы Docker можно следующей командой:
 
 1. > `docker-compose --project-directory ./infra up -d --build`
-
-    сборка образов docker
-
-2. > `docker-compose --project-directory ./infra exec web python manage.py migrate`
-
-    выполнение миграций БД
-
-3. > `docker-compose --project-directory ./infra exec web python manage.py createsuperuser --noinput --email admin@admin.ru --username admin`
+   
+2. > `docker-compose --project-directory ./infra exec web python manage.py createsuperuser --noinput --email admin@admin.ru --username admin`
 
     создание пользователя **admin** c почтой **admin@admin.ru**
     
     Внимание! пароль необходимо задать командой в ручном режиме (после выполнения скрипта **_run.sh_**):
     
     > `docker-compose --project-directory ./infra exec web python manage.py changepassword`
-
-
-3. > `docker-compose --project-directory ./infra exec web python manage.py collectstatic --no-input`
-
-    Сбор файлов статики _Django_ на том _Docker_
 
     После выполенения всех команд, можно загрузить фикстуры командой:
     > `docker-compose --project-directory ./infra exec web python manage.py loaddata fixtures.json`
