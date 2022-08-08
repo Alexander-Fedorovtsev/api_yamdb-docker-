@@ -11,7 +11,7 @@ if os.path.exists(dotenv_path):
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = os.getenv("DEBUG")
+DEBUG = os.getenv("DEBUG",default=False)
 
 ALLOWED_HOSTS = ["*"]
 
