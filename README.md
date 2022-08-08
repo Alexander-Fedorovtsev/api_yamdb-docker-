@@ -34,15 +34,13 @@ YaMDB отправляет письмо с кодом подтверждения
 
 1. > `docker-compose --project-directory ./infra up -d --build`
    
-2. > `docker-compose --project-directory ./infra exec web python manage.py createsuperuser --noinput --email admin@admin.ru --username admin`
-
-    создание пользователя **admin** c почтой **admin@admin.ru**
+    в скрипте `docker-compose` прописано создание суперпользователя **admin** c почтой **admin@admin.ru**
     
-    Внимание! пароль необходимо задать командой в ручном режиме (после выполнения скрипта **_run.sh_**):
+    Внимание! пароль необходимо задать командой в ручном режиме:
     
     > `docker-compose --project-directory ./infra exec web python manage.py changepassword`
 
-    После выполенения всех команд, можно загрузить фикстуры командой:
+    После выполенения всех команд, при необходимости, можно загрузить фикстуры командой:
     > `docker-compose --project-directory ./infra exec web python manage.py loaddata fixtures.json`
 
 ## Автор
