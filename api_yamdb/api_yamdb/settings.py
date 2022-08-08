@@ -9,12 +9,11 @@ dotenv_path = os.path.join(os.path.dirname(BASE_DIR), "infra/.env")
 if os.path.exists(dotenv_path):
     load_dotenv(dotenv_path)
 
-
-ALLOWED_HOSTS = ["*"]
-
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = os.getenv("DEBUG")
+
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
